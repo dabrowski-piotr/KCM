@@ -37,11 +37,12 @@
   --sans:"Jost","Futura","Century Gothic",system-ui,sans-serif;
   --gut:clamp(22px,6vw,80px);
 }
+html{overflow-x:hidden}
 *,*::before,*::after{box-sizing:border-box}
 body{
-  margin:0;min-height:100svh;background:var(--ink);color:var(--marble);
+  margin:0;min-height:100vh;min-height:100svh;background:var(--ink);color:var(--marble);
   font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.68;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:hidden;
   display:flex;flex-direction:column;
 }
 img{display:block;max-width:100%}
@@ -73,7 +74,7 @@ main{position:relative;z-index:2;flex:1;display:flex;align-items:center;padding:
 .inner{width:100%;max-width:1180px;margin:0 auto}
 .copy{max-width:min(660px,60%)}
 
-.mark{width:54px;margin-bottom:24px}
+.mark{display:block;width:54px;height:auto;color:var(--brass);margin-bottom:24px}
 .tag{
   display:inline-flex;align-items:center;gap:11px;
   font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass-hi);
@@ -105,7 +106,7 @@ h1 em{font-style:italic;color:var(--brass-hi)}
 .tel-big{
   font-family:var(--sans);font-weight:500;
   font-size:clamp(32px,4.2vw,52px);line-height:1.05;letter-spacing:.01em;
-  color:var(--brass-hi);text-decoration:none;display:inline-block;margin:6px 0 10px;
+  color:var(--brass-hi);text-decoration:none;display:inline-block;margin:2px 0 8px;padding:7px 0;
   transition:color .25s ease;
 }
 .tel-big:hover{color:#F3DCB2}
@@ -119,16 +120,16 @@ h1 em{font-style:italic;color:var(--brass-hi)}
 }
 
 /* stopka */
-.foot{position:relative;z-index:2;border-top:1px solid rgba(226,196,142,.18);background:rgba(11,10,9,.6);backdrop-filter:blur(8px)}
+.foot{position:relative;z-index:2;border-top:1px solid rgba(226,196,142,.18);background:rgba(11,10,9,.6);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 .foot .inner{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:26px 34px;padding:30px var(--gut)}
-.foot h2{font-family:var(--sans);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--brass-hi);margin:0 0 8px;font-weight:400}
+.foot h2{font-family:var(--sans);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--brass-hi);margin:0 0 4px;font-weight:400}
 .foot p{margin:0;font-size:15.5px;color:#BDB4A8;line-height:1.55}
-.foot a{text-decoration:none}
+.foot a{text-decoration:none;display:inline-block;padding:10px 0}
 .foot a:hover{color:var(--brass-hi)}
 .credit{border-top:1px solid rgba(226,196,142,.1);font-size:11.5px;color:#6E675E;padding:14px var(--gut);letter-spacing:.04em}
 
 @media(max-width:900px){
-  .bg .photo{width:100%;clip-path:none;opacity:.22}
+  .bg .photo{width:100%;clip-path:none;opacity:.16}
   .orb{right:-14%;top:3%;opacity:.5;width:min(46vw,240px)}
   .copy{max-width:100%}
   main{padding-top:78px}
@@ -148,7 +149,7 @@ h1 em{font-style:italic;color:var(--brass-hi)}
 <main>
   <div class="inner">
     <div class="copy">
-      <img class="mark" src="assets/logo-mark.png" alt="Krakowskie Centrum Medyczne" width="60">
+      <svg class="mark" viewBox="0 0 134 159" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Krakowskie Centrum Medyczne"><path fill="currentColor" d="M 0.00,26.00 L 0.00,27.88 L 1.75,28.00 L 5.00,32.38 L 8.00,42.38 L 8.00,156.50 L 9.38,157.88 L 46.50,157.88 L 47.88,156.50 L 48.62,116.88 L 88.00,158.88 L 133.88,158.88 L 133.88,156.00 L 108.00,129.75 L 65.50,82.00 L 60.12,86.12 L 48.50,100.00 L 46.88,99.62 L 47.88,4.25 L 46.75,2.75 L 47.88,0.00 L 13.50,20.00 Z M 111.38,12.88 L 91.12,13.12 L 90.88,30.75 L 75.38,31.00 L 75.00,31.38 L 75.12,47.75 L 90.50,47.88 L 91.00,48.38 L 91.00,65.50 L 91.38,65.88 L 110.50,65.88 L 111.88,64.62 L 110.88,63.50 L 110.88,49.38 L 112.38,47.88 L 126.50,47.88 L 126.88,47.50 L 126.75,31.12 L 112.38,31.00 L 110.88,29.50 L 110.88,14.38 L 111.88,13.62 Z"/></svg>
 
       <span class="tag"><i></i>Błąd 404: nie ma takiej strony</span>
 

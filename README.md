@@ -13,7 +13,8 @@ Bez zależności i bez procesu budowania. Czysty HTML i CSS.
 ├── sitemap.xml
 ├── .nojekyll           # wyłącza przetwarzanie Jekyllem na GitHub Pages
 └── assets/
-    ├── logo-mark.png       # znak „k+" na przezroczystości
+    ├── logo-mark.svg       # znak „k+" w wersji wektorowej
+    ├── logo-mark.png       # znak „k+" na przezroczystości (zapas)
     ├── recepcja.jpg        # tło hero
     ├── og.jpg              # miniatura do udostępniania (1200×630)
     ├── favicon-32.png
@@ -42,6 +43,14 @@ Po chwili strona jest pod `https://dabrowski-piotr.github.io/kcm/`.
    (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`),
    a dla `www` rekord CNAME na `dabrowski-piotr.github.io`.
 3. W Settings → Pages wpisz domenę i zaznacz **Enforce HTTPS**.
+
+## Znak graficzny
+
+Znak „k+" jest wklejony bezpośrednio w kod stron jako wektor (`<svg class="mark">`),
+więc nie wymaga osobnego pobrania i jest ostry na każdym ekranie. Kolor bierze
+z CSS (`currentColor`), można go zmienić jedną właściwością. Pliki
+`assets/logo-mark.svg` i `.png` zostają jako materiał zapasowy oraz źródło
+dla favikon.
 
 ## Do podmiany po uruchomieniu domeny
 
