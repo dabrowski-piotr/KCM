@@ -52,18 +52,15 @@ z CSS (`currentColor`), można go zmienić jedną właściwością. Pliki
 `assets/logo-mark.svg` i `.png` zostają jako materiał zapasowy oraz źródło
 dla favikon.
 
-## Do podmiany po uruchomieniu domeny
+## Adresy w plikach
 
-Adres `https://dabrowski-piotr.github.io/kcm/` występuje w trzech miejscach.
-Po podpięciu domeny podmień go na docelowy:
+Adresy w plikach wskazują już na docelową domenę
+`https://www.krakowskiecentrummedyczne.pl` (canonical, og:image, og:url,
+`robots.txt`, `sitemap.xml`). Nie wymagają zmian.
 
-- `index.html` → `<link rel="canonical">`
-- `robots.txt` → linia `Sitemap:`
-- `sitemap.xml` → `<loc>`
-
-W `index.html` warto też zamienić względny `og:image` na pełny adres
-(`https://.../assets/og.jpg`). Część serwisów nie rozwija ścieżek względnych
-przy generowaniu podglądu linku.
+Zdjęcie recepcji jest wklejone bezpośrednio w `index.html` i `404.html`, więc
+strona wygląda poprawnie nawet bez katalogu `assets`. Katalog jest natomiast
+potrzebny do favikon i do miniatury `og.jpg` przy udostępnianiu linku.
 
 ## Dane do potwierdzenia z klientem
 

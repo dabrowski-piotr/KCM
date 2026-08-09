@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dabrowski-piotr.github.io/kcm/sitemap.xml
+Sitemap: https://www.krakowskiecentrummedyczne.pl/sitemap.xml
