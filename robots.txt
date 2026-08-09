@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dabrowski-piotr.github.io/kcm/sitemap.xml

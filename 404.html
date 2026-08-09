@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nie znaleziono strony | Krakowskie Centrum Medyczne</title>
+<meta name="description" content="Krakowskie Centrum Medyczne, Rynek 26 w Przemyślu. Ginekologia i położnictwo, kardiologia, dermatologia, USG piersi, ginekologia estetyczna. Rejestracja codziennie 9:00-18:00, telefon 790 866 877. Nowa strona w przygotowaniu.">
+<meta name="theme-color" content="#12100E">
+<meta name="robots" content="noindex">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:title" content="Krakowskie Centrum Medyczne, Rynek 26 w Przemyślu">
+<meta property="og:description" content="Gabinet działa normalnie. Rejestracja codziennie 9:00-18:00, telefon 790 866 877. Nowa strona w przygotowaniu.">
+<meta property="og:image" content="assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+<link rel="icon" href="assets/favicon-512.png" sizes="512x512">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* Krakowskie Centrum Medyczne. Strona przejściowa.
+   Kolory i kroje pisma zgodne z docelowym serwisem. */
+:root{
+  --ink:#12100E;
+  --graphite:#211D19;
+  --marble:#F7F5F2;
+  --brass:#A8844C;
+  --brass-hi:#E2C48E;
+  --brass-deep:#7A5C2E;
+  --display:"Bodoni Moda","Didot",Georgia,serif;
+  --sans:"Jost","Futura","Century Gothic",system-ui,sans-serif;
+  --gut:clamp(22px,6vw,80px);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0;min-height:100svh;background:var(--ink);color:var(--marble);
+  font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.68;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  display:flex;flex-direction:column;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass-hi);outline-offset:4px;border-radius:3px}
+
+/* tło */
+.bg{position:fixed;inset:0;z-index:0;overflow:hidden}
+.bg .photo{
+  position:absolute;top:0;right:0;bottom:0;width:58%;
+  background:url('assets/recepcja.jpg') center 42%/cover no-repeat;
+  clip-path:ellipse(100% 118% at 100% 50%);
+}
+.bg .photo::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(100deg,var(--ink) 2%,rgba(18,16,14,.74) 32%,rgba(18,16,14,.18) 80%);
+}
+/* kula dekoracyjna */
+.orb{
+  position:absolute;width:min(26vw,290px);aspect-ratio:1;border-radius:50%;
+  top:8%;right:24%;opacity:.8;
+  background:radial-gradient(circle at 34% 26%,#FFF3DA 0%,var(--brass-hi) 16%,var(--brass) 44%,var(--brass-deep) 72%,#3A2A12 100%);
+  box-shadow:0 0 90px 30px rgba(168,132,76,.22),inset -12px -18px 40px rgba(0,0,0,.45);
+  animation:drift 16s ease-in-out infinite alternate;
+}
+@keyframes drift{to{transform:translateY(28px)}}
+
+main{position:relative;z-index:2;flex:1;display:flex;align-items:center;padding:clamp(90px,12vh,150px) var(--gut) clamp(40px,6vh,70px)}
+.inner{width:100%;max-width:1180px;margin:0 auto}
+.copy{max-width:min(660px,60%)}
+
+.mark{width:54px;margin-bottom:24px}
+.tag{
+  display:inline-flex;align-items:center;gap:11px;
+  font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass-hi);
+  border:1px solid rgba(226,196,142,.35);border-radius:100px;padding:7px 18px 7px 14px;margin-bottom:22px;
+}
+.tag i{width:7px;height:7px;border-radius:50%;background:var(--brass-hi);animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25;transform:scale(.8)}}
+
+h1{
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(34px,4.6vw,62px);line-height:1.04;letter-spacing:-.02em;
+  margin:0 0 20px;text-wrap:balance;
+}
+h1 em{font-style:italic;color:var(--brass-hi)}
+.lead{font-size:clamp(17px,1.5vw,20px);line-height:1.7;color:#C9C0B4;margin:0 0 8px;max-width:48ch}
+
+.cta{display:flex;flex-wrap:wrap;gap:13px;margin:28px 0 0}
+.btn{
+  display:inline-flex;align-items:center;gap:11px;text-decoration:none;
+  padding:15px 30px;border-radius:100px;font-size:13.5px;letter-spacing:.13em;
+  text-transform:uppercase;font-weight:500;
+  transition:transform .3s ease,background .3s,border-color .3s,color .3s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-solid{background:linear-gradient(135deg,var(--brass-hi),var(--brass) 55%,var(--brass-deep));color:#1B1408}
+.btn-ghost{border:1px solid rgba(226,196,142,.45);color:var(--marble)}
+.btn-ghost:hover{border-color:var(--brass-hi);background:rgba(226,196,142,.08)}
+
+.tel-big{
+  font-family:var(--sans);font-weight:500;
+  font-size:clamp(32px,4.2vw,52px);line-height:1.05;letter-spacing:.01em;
+  color:var(--brass-hi);text-decoration:none;display:inline-block;margin:6px 0 10px;
+  transition:color .25s ease;
+}
+.tel-big:hover{color:#F3DCB2}
+
+/* zakres opieki */
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:9px;padding:0;margin:30px 0 0;max-width:620px}
+.chips li{
+  font-size:12.5px;letter-spacing:.09em;color:#CBC2B6;
+  border:1px solid rgba(226,196,142,.22);border-radius:100px;padding:8px 17px;
+  background:rgba(226,196,142,.045);
+}
+
+/* stopka */
+.foot{position:relative;z-index:2;border-top:1px solid rgba(226,196,142,.18);background:rgba(11,10,9,.6);backdrop-filter:blur(8px)}
+.foot .inner{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:26px 34px;padding:30px var(--gut)}
+.foot h2{font-family:var(--sans);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--brass-hi);margin:0 0 8px;font-weight:400}
+.foot p{margin:0;font-size:15.5px;color:#BDB4A8;line-height:1.55}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--brass-hi)}
+.credit{border-top:1px solid rgba(226,196,142,.1);font-size:11.5px;color:#6E675E;padding:14px var(--gut);letter-spacing:.04em}
+
+@media(max-width:900px){
+  .bg .photo{width:100%;clip-path:none;opacity:.22}
+  .orb{right:-14%;top:3%;opacity:.5;width:min(46vw,240px)}
+  .copy{max-width:100%}
+  main{padding-top:78px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<div class="bg" aria-hidden="true">
+  <div class="photo"></div>
+  <div class="orb"></div>
+</div>
+
+<main>
+  <div class="inner">
+    <div class="copy">
+      <img class="mark" src="assets/logo-mark.png" alt="Krakowskie Centrum Medyczne" width="60">
+
+      <span class="tag"><i></i>Błąd 404: nie ma takiej strony</span>
+
+      <h1>Tej strony<br><em>tu</em> nie ma.</h1>
+
+      <p class="lead">Serwis Krakowskiego Centrum Medycznego jest w przygotowaniu. Wizytę umówisz telefonicznie lub przez Messengera.</p>
+
+      <a class="tel-big" href="tel:+48790866877">790&nbsp;866&nbsp;877</a>
+      <p class="hours">Rejestracja codziennie w godzinach 9:00–18:00.</p>
+
+      <div class="cta">
+        <a class="btn btn-solid" href="./">Wróć na stronę główną</a>
+        <a class="btn btn-ghost" href="https://m.me/krakowskieCM" rel="noopener">Napisz na Messengerze</a>
+      </div>
+
+      <ul class="chips">
+        <li>Ginekologia i położnictwo</li>
+        <li>Ciąże wysokiego ryzyka</li>
+        <li>Kardiologia</li>
+        <li>Dermatologia</li>
+        <li>USG piersi</li>
+        <li>Ginekologia estetyczna</li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="inner">
+    <div>
+      <h2>Adres</h2>
+      <p>Rynek 26<br>37-700 Przemyśl</p>
+    </div>
+    <div>
+      <h2>Rejestracja</h2>
+      <p>Codziennie 9:00–18:00<br><a href="tel:+48790866877">790 866 877</a></p>
+    </div>
+    <div>
+      <h2>Aktualności i terminy</h2>
+      <p><a href="https://www.facebook.com/krakowskieCM" rel="noopener">facebook.com/krakowskieCM</a></p>
+    </div>
+  </div>
+  <div class="credit">
+    © <span id="y">2026</span> Krakowskie Centrum Medyczne &nbsp;·&nbsp; Godziny przyjęć zależą od grafiku lekarza. Termin potwierdzamy przy rejestracji.
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"MedicalClinic",
+  "name":"Krakowskie Centrum Medyczne",
+  "description":"Specjalistyczne gabinety lekarskie w Przemyślu: położnictwo i ginekologia, kardiologia, dermatologia, diagnostyka USG.",
+  "address":{"@type":"PostalAddress","streetAddress":"Rynek 26","addressLocality":"Przemyśl","postalCode":"37-700","addressCountry":"PL"},
+  "geo":{"@type":"GeoCoordinates","latitude":49.784261,"longitude":22.777185},
+  "telephone":"+48790866877",
+  "openingHours":"Mo-Su 09:00-18:00",
+  "sameAs":["https://www.facebook.com/krakowskieCM"],
+  "foundingDate":"2022-01-08"
+}
+</script>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
