@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Krakowskie Centrum Medyczne Przemyśl, Rynek 26 | Rejestracja 790 866 877</title>
-<meta name="description" content="Krakowskie Centrum Medyczne, Rynek 26 w Przemyślu. Ginekologia i położnictwo, kardiologia, dermatologia, USG piersi, ginekologia estetyczna. Rejestracja codziennie 9:00-18:00, telefon 790 866 877. Nowa strona w przygotowaniu.">
+<meta name="description" content="Krakowskie Centrum Medyczne, Rynek 26 w Przemyślu. Ginekologia i położnictwo, kardiologia, dermatologia, USG piersi, ginekologia estetyczna. Rejestracja codziennie 9:00-18:00, telefon 790 866 877. Trwają prace nad nowym serwisem.">
 <meta name="theme-color" content="#12100E">
 <link rel="canonical" href="https://dabrowski-piotr.github.io/kcm/">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pl_PL">
 <meta property="og:title" content="Krakowskie Centrum Medyczne, Rynek 26 w Przemyślu">
-<meta property="og:description" content="Gabinet działa normalnie. Rejestracja codziennie 9:00-18:00, telefon 790 866 877. Nowa strona w przygotowaniu.">
+<meta property="og:description" content="Gabinet działa normalnie. Rejestracja codziennie 9:00-18:00, telefon 790 866 877. Trwają prace nad nowym serwisem.">
 <meta property="og:image" content="assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -60,15 +60,12 @@ a{color:inherit}
   content:"";position:absolute;inset:0;
   background:linear-gradient(100deg,var(--ink) 2%,rgba(18,16,14,.74) 32%,rgba(18,16,14,.18) 80%);
 }
-/* kula dekoracyjna */
-.orb{
-  position:absolute;width:min(26vw,290px);aspect-ratio:1;border-radius:50%;
-  top:8%;right:24%;opacity:.8;
-  background:radial-gradient(circle at 34% 26%,#FFF3DA 0%,var(--brass-hi) 16%,var(--brass) 44%,var(--brass-deep) 72%,#3A2A12 100%);
-  box-shadow:0 0 90px 30px rgba(168,132,76,.22),inset -12px -18px 40px rgba(0,0,0,.45);
-  animation:drift 16s ease-in-out infinite alternate;
+/* poswiata od lamp ze zdjecia */
+.glow{
+  position:absolute;top:-30%;right:-6%;
+  width:min(62vw,660px);aspect-ratio:1;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(255,236,201,.13) 0%,rgba(226,196,142,.06) 36%,rgba(226,196,142,0) 66%);
 }
-@keyframes drift{to{transform:translateY(28px)}}
 
 main{position:relative;z-index:2;flex:1;display:flex;align-items:center;padding:clamp(90px,12vh,150px) var(--gut) clamp(40px,6vh,70px)}
 .inner{width:100%;max-width:1180px;margin:0 auto}
@@ -130,7 +127,7 @@ h1 em{font-style:italic;color:var(--brass-hi)}
 
 @media(max-width:900px){
   .bg .photo{width:100%;clip-path:none;opacity:.16}
-  .orb{right:-14%;top:3%;opacity:.5;width:min(46vw,240px)}
+  .glow{top:-8%;right:-20%;width:min(120vw,560px)}
   .copy{max-width:100%}
   main{padding-top:78px}
 }
@@ -143,7 +140,7 @@ h1 em{font-style:italic;color:var(--brass-hi)}
 
 <div class="bg" aria-hidden="true">
   <div class="photo"></div>
-  <div class="orb"></div>
+  <div class="glow"></div>
 </div>
 
 <main>
@@ -151,11 +148,11 @@ h1 em{font-style:italic;color:var(--brass-hi)}
     <div class="copy">
       <svg class="mark" viewBox="0 0 134 159" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Krakowskie Centrum Medyczne"><path fill="currentColor" d="M 0.00,26.00 L 0.00,27.88 L 1.75,28.00 L 5.00,32.38 L 8.00,42.38 L 8.00,156.50 L 9.38,157.88 L 46.50,157.88 L 47.88,156.50 L 48.62,116.88 L 88.00,158.88 L 133.88,158.88 L 133.88,156.00 L 108.00,129.75 L 65.50,82.00 L 60.12,86.12 L 48.50,100.00 L 46.88,99.62 L 47.88,4.25 L 46.75,2.75 L 47.88,0.00 L 13.50,20.00 Z M 111.38,12.88 L 91.12,13.12 L 90.88,30.75 L 75.38,31.00 L 75.00,31.38 L 75.12,47.75 L 90.50,47.88 L 91.00,48.38 L 91.00,65.50 L 91.38,65.88 L 110.50,65.88 L 111.88,64.62 L 110.88,63.50 L 110.88,49.38 L 112.38,47.88 L 126.50,47.88 L 126.88,47.50 L 126.75,31.12 L 112.38,31.00 L 110.88,29.50 L 110.88,14.38 L 111.88,13.62 Z"/></svg>
 
-      <span class="tag"><i></i>Nowa strona w przygotowaniu</span>
+      <span class="tag"><i></i>Przygotowujemy nowy serwis</span>
 
-      <h1>Gabinet czynny.<br>Strona <em>dopiero</em> powstaje.</h1>
+      <h1>Gabinet przyjmuje.<br>Nowa strona <em>wkrótce</em>.</h1>
 
-      <p class="lead">Krakowskie Centrum Medyczne, Rynek 26 w Przemyślu. Pełny serwis uruchamiamy wkrótce. Do tego czasu wizytę umówisz telefonicznie lub przez Messengera.</p>
+      <p class="lead">Krakowskie Centrum Medyczne, Rynek 26 w Przemyślu. Pracujemy nad nowym serwisem. Wizytę umówisz telefonicznie lub przez Messengera, tak jak dotychczas.</p>
 
       <a class="tel-big" href="tel:+48790866877">790&nbsp;866&nbsp;877</a>
       <p class="hours">Rejestracja codziennie w godzinach 9:00–18:00.</p>
