@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formularz kontaktowy | Krakowskie Centrum Medyczne, Przemyśl</title>
+<meta name="description" content="Zostaw imię i numer telefonu, a oddzwonimy w godzinach pracy rejestracji. Krakowskie Centrum Medyczne, Rynek 26 w Przemyślu.">
+<meta name="theme-color" content="#12100E">
+<link rel="canonical" href="https://www.krakowskiecentrummedyczne.pl/formularz.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:title" content="Formularz kontaktowy | Krakowskie Centrum Medyczne">
+<meta property="og:description" content="Zostaw imię i numer telefonu, a oddzwonimy.">
+<meta property="og:url" content="https://www.krakowskiecentrummedyczne.pl/formularz.html">
+<meta property="og:image" content="https://www.krakowskiecentrummedyczne.pl/og.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Jost:wght@300;400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styl.css">
+<style>
+/* ---------- formularz: style tylko dla tej strony ---------- */
+.form-uklad{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(32px,5vw,72px);align-items:start}
+@media(min-width:961px){.form-uklad > :first-child{position:sticky;top:104px}}
+@media(max-width:960px){.form-uklad{grid-template-columns:1fr}}
+
+.panel{
+  position:relative;background:var(--graphite);border:1px solid rgba(168,132,76,.3);
+  border-radius:14px;padding:clamp(26px,3.4vw,44px);
+  box-shadow:0 30px 70px rgba(0,0,0,.42);
+}
+.panel::before{
+  content:"";position:absolute;inset:-1px -1px auto -1px;height:2px;border-radius:14px 14px 0 0;
+  background:linear-gradient(90deg,rgba(226,196,142,0),var(--brass-hi),rgba(226,196,142,0));
+}
+
+.pola{display:grid;gap:20px}
+.rzad{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:620px){.rzad{grid-template-columns:1fr}}
+
+.pole{position:relative;display:block}
+.pole > span.et{
+  display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--tekst-2);margin:0 0 9px;
+}
+.pole > span.et b{color:var(--brass);font-weight:400;margin-left:4px}
+.pole input,.pole select,.pole textarea{
+  width:100%;font-family:var(--sans);font-size:16.5px;font-weight:300;color:var(--marble);
+  background:rgba(18,16,14,.7);border:1px solid rgba(226,196,142,.22);border-radius:8px;
+  padding:15px 16px;line-height:1.5;
+  transition:border-color .25s ease,background .25s ease,box-shadow .25s ease;
+  -webkit-appearance:none;appearance:none;
+}
+.pole textarea{min-height:132px;resize:vertical}
+.pole select{
+  background-image:linear-gradient(45deg,transparent 50%,rgba(226,196,142,.7) 50%),linear-gradient(135deg,rgba(226,196,142,.7) 50%,transparent 50%);
+  background-position:calc(100% - 20px) calc(50% + 2px),calc(100% - 14px) calc(50% + 2px);
+  background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:44px;
+}
+.pole select option{background:#1E1A17;color:var(--marble)}
+.pole input::placeholder,.pole textarea::placeholder{color:#6E675E}
+.pole input:hover,.pole select:hover,.pole textarea:hover{border-color:rgba(226,196,142,.4)}
+.pole input:focus,.pole select:focus,.pole textarea:focus{
+  outline:none;border-color:var(--brass);background:rgba(18,16,14,.95);
+  box-shadow:0 0 0 3px rgba(168,132,76,.16);
+}
+.pole.zle input,.pole.zle select,.pole.zle textarea{border-color:#C4726A;box-shadow:0 0 0 3px rgba(196,114,106,.14)}
+.blad{display:none;margin:8px 0 0;font-size:13px;color:#D69189;letter-spacing:.02em}
+.pole.zle .blad{display:block}
+.podpowiedz{margin:8px 0 0;font-size:13px;color:var(--tekst-2);line-height:1.5}
+
+.zgoda{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;cursor:pointer}
+.zgoda input{
+  -webkit-appearance:none;appearance:none;flex:none;width:22px;height:22px;margin:2px 0 0;
+  border:1px solid rgba(226,196,142,.4);border-radius:5px;background:rgba(18,16,14,.7);
+  cursor:pointer;position:relative;transition:background .25s ease,border-color .25s ease;
+}
+.zgoda input:checked{background:linear-gradient(135deg,var(--brass-hi),var(--brass) 60%,var(--brass-deep));border-color:transparent}
+.zgoda input:checked::after{
+  content:"";position:absolute;left:7px;top:3px;width:6px;height:11px;
+  border:solid #1B1408;border-width:0 2px 2px 0;transform:rotate(42deg);
+}
+.zgoda span{font-size:14.5px;line-height:1.6;color:var(--tekst)}
+.zgoda.zle input{border-color:#C4726A;box-shadow:0 0 0 3px rgba(196,114,106,.14)}
+.zgoda.zle .blad{display:block;margin-top:7px}
+
+.wyslij{
+  width:100%;justify-content:center;border:0;cursor:pointer;font-family:var(--sans);
+  margin-top:4px;padding:18px 30px;
+}
+.wyslij[disabled]{opacity:.6;cursor:progress}
+.klauzula{
+  margin:26px 0 0;padding-top:20px;border-top:1px solid rgba(226,196,142,.13);
+  font-size:12.5px;line-height:1.65;color:var(--tekst-2);
+}
+
+/* stan po wysłaniu */
+.sukces{display:none;text-align:center;padding:clamp(20px,4vw,44px) 0}
+.sukces.on{display:block;animation:wejscie .6s cubic-bezier(.2,.7,.2,1) both}
+.forma.off{display:none}
+@keyframes wejscie{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.znaczek{
+  width:74px;height:74px;margin:0 auto 24px;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 34% 28%,var(--brass-hi),var(--brass) 58%,var(--brass-deep));
+}
+.znaczek::after{
+  content:"";width:15px;height:27px;border:solid #1B1408;border-width:0 2.5px 2.5px 0;
+  transform:rotate(42deg) translate(-2px,-3px);
+}
+.sukces h2{margin-bottom:14px}
+.sukces .lead{margin:0 auto}
+
+/* awaria wysyłki */
+.awaria{
+  display:none;margin:20px 0 0;padding:18px 20px;border-radius:10px;
+  border:1px solid rgba(196,114,106,.45);background:rgba(196,114,106,.08);
+  font-size:15px;line-height:1.6;color:#E8CFC9;
+}
+.awaria.on{display:block}
+.awaria a{color:var(--brass-hi)}
+
+/* lewa kolumna */
+.kroki{list-style:none;padding:0;margin:34px 0 0}
+.kroki li{
+  display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:baseline;
+  padding:18px 0;border-bottom:1px solid rgba(226,196,142,.14);
+}
+.kroki li:first-child{border-top:1px solid rgba(226,196,142,.14)}
+.kroki .rzym{font-family:var(--display);font-size:14px;color:var(--brass-hi);min-width:28px}
+.kroki strong{display:block;font-family:var(--sans);font-weight:400;font-size:16.5px;color:var(--marble);margin-bottom:3px}
+.kroki small{font-size:14.5px;color:var(--tekst-2);line-height:1.6}
+.pilne{
+  margin-top:34px;padding:22px 24px;border-radius:12px;
+  border:1px solid rgba(226,196,142,.22);background:rgba(226,196,142,.045);
+}
+.pilne p{margin:0 0 6px;font-size:15px;color:var(--tekst)}
+.pilne a{font-family:var(--sans);font-weight:500;font-size:26px;color:var(--brass-hi);text-decoration:none;display:inline-block;padding:6px 0}
+.pilne a:hover{color:#F3DCB2}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.burger{min-height:40px}
+</style>
+</head>
+<body>
+<a class="skip" href="#tresc">Przejdź do treści</a>
+<nav class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><svg class="mark" viewBox="0 0 134 159" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Krakowskie Centrum Medyczne"><path fill="currentColor" d="M 0.00,26.00 L 0.00,27.88 L 1.75,28.00 L 5.00,32.38 L 8.00,42.38 L 8.00,156.50 L 9.38,157.88 L 46.50,157.88 L 47.88,156.50 L 48.62,116.88 L 88.00,158.88 L 133.88,158.88 L 133.88,156.00 L 108.00,129.75 L 65.50,82.00 L 60.12,86.12 L 48.50,100.00 L 46.88,99.62 L 47.88,4.25 L 46.75,2.75 L 47.88,0.00 L 13.50,20.00 Z M 111.38,12.88 L 91.12,13.12 L 90.88,30.75 L 75.38,31.00 L 75.00,31.38 L 75.12,47.75 L 90.50,47.88 L 91.00,48.38 L 91.00,65.50 L 91.38,65.88 L 110.50,65.88 L 111.88,64.62 L 110.88,63.50 L 110.88,49.38 L 112.38,47.88 L 126.50,47.88 L 126.88,47.50 L 126.75,31.12 L 112.38,31.00 L 110.88,29.50 L 110.88,14.38 L 111.88,13.62 Z"/></svg><span>Krakowskie<br>Centrum Medyczne</span></a>
+    <div class="links">
+      <a class="link" href="oferta.html">Zakres opieki</a>
+      <a class="link" href="lekarze.html">Lekarze</a>
+      <a class="link akt" aria-current="page" href="kontakt.html">Kontakt</a>
+    </div>
+    <a class="tel" href="tel:+48790866877"><span class="tel-ico" aria-hidden="true"></span>790 866 877</a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</nav>
+<div class="menu" id="menu"><a href="index.html">Strona główna</a><a href="oferta.html">Zakres opieki</a><a href="lekarze.html">Lekarze</a><a href="kontakt.html">Kontakt</a><a href="formularz.html">Formularz kontaktowy</a>
+  <a class="menu-tel" href="tel:+48790866877">Zadzwoń: 790 866 877</a>
+</div>
+
+<header class="hero" id="tresc">
+  <div class="hero-foto" aria-hidden="true"></div>
+  <div class="blask" aria-hidden="true"></div>
+  <div class="hero-in">
+    <div class="hero-tresc">
+      <p class="etykieta">Formularz kontaktowy</p>
+      <h1>Zostaw numer,<br><em>oddzwonimy</em>.</h1>
+      <p class="lead">Nie musisz czekać na połączenie ani trafiać w godziny rejestracji. Wypełnij dwa pola, a odezwiemy się z propozycją terminu.</p>
+    </div>
+  </div>
+</header>
+
+<div class="liczby">
+  <div class="wrap"><ul>
+    <li>Wymagane pola: <b>imię i telefon</b></li>
+    <li>Oddzwaniamy <b>pon.–sob. 9:00–18:00</b></li>
+    <li>Wolisz zadzwonić? <b>790 866 877</b></li>
+  </ul></div>
+</div>
+
+<section class="pad">
+  <div class="wrap form-uklad">
+
+    <div class="rv">
+      <p class="etykieta">Jak to działa</p>
+      <h2>Trzy kroki<br>do terminu</h2>
+      <ul class="kroki">
+        <li><span class="rzym">I</span><span><strong>Zostawiasz imię i telefon</strong><small>Tylko tyle jest wymagane. Resztę pól wypełnij, jeśli chcesz nam ułatwić zadanie.</small></span></li>
+        <li><span class="rzym">II</span><span><strong>Oddzwaniamy</strong><small>W godzinach pracy rejestracji, od poniedziałku do soboty między 9:00 a 18:00. Zgłoszenia z wieczora obsługujemy następnego dnia roboczego.</small></span></li>
+        <li><span class="rzym">III</span><span><strong>Ustalamy termin</strong><small>Podczas rozmowy dobieramy specjalistę i godzinę, która Ci pasuje.</small></span></li>
+      </ul>
+
+      <div class="pilne">
+        <p>Sprawa pilna albo wolisz od razu porozmawiać?</p>
+        <a href="tel:+48790866877">790 866 877</a>
+        <p style="margin-top:2px;font-size:13.5px;color:var(--tekst-2)">Rejestracja telefoniczna pon.–sob. 9:00–18:00</p>
+        <p style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(226,196,142,.14);font-size:14.5px">Możesz też napisać:<br><a class="mail" href="mailto:kontakt@krakowskiecentrummedyczne.pl">kontakt@krakowskiecentrummedyczne.pl</a></p>
+      </div>
+    </div>
+
+    <div class="rv">
+      <div class="panel">
+
+        <form class="forma" id="forma" action="wyslij.php" method="POST" novalidate>
+          <div class="pola">
+
+            <div class="rzad">
+              <label class="pole" id="p-imie">
+                <span class="et">Imię i nazwisko <b>*</b></span>
+                <input type="text" name="imie" id="imie" autocomplete="name" placeholder="Anna Kowalska" required>
+                <p class="blad">Podaj imię, żebyśmy wiedzieli, do kogo dzwonimy.</p>
+              </label>
+
+              <label class="pole" id="p-tel">
+                <span class="et">Numer telefonu <b>*</b></span>
+                <input type="tel" name="telefon" id="telefon" autocomplete="tel" inputmode="tel" placeholder="600 100 200" required>
+                <p class="blad">Podaj numer telefonu, minimum dziewięć cyfr.</p>
+              </label>
+            </div>
+
+            <div class="rzad">
+              <label class="pole" id="p-mail">
+                <span class="et">Adres e-mail</span>
+                <input type="email" name="email" id="email" autocomplete="email" placeholder="nieobowiązkowo">
+                <p class="blad">Ten adres wygląda na niepełny.</p>
+              </label>
+
+              <label class="pole">
+                <span class="et">Czego dotyczy zgłoszenie</span>
+                <select name="temat" id="temat">
+                  <option>Umówienie wizyty</option>
+                  <option>Ginekologia i położnictwo</option>
+                  <option>Kardiologia</option>
+                  <option>Dermatologia</option>
+                  <option>Urologia</option>
+                  <option>USG i diagnostyka</option>
+                  <option>Ginekologia estetyczna</option>
+                  <option>Inna sprawa</option>
+                </select>
+              </label>
+            </div>
+
+            <label class="pole">
+              <span class="et">Wiadomość</span>
+              <textarea name="wiadomosc" id="wiadomosc" placeholder="Na przykład: preferowane dni i godziny, wybrany lekarz."></textarea>
+              <p class="podpowiedz">Prosimy nie opisywać tutaj objawów ani stanu zdrowia. Te sprawy omówimy telefonicznie lub podczas wizyty.</p>
+            </label>
+
+            <label class="zgoda" id="p-zgoda">
+              <input type="checkbox" name="zgoda" id="zgoda" required>
+              <span>Wyrażam zgodę na kontakt telefoniczny w sprawie mojego zgłoszenia i przyjmuję do wiadomości informacje o przetwarzaniu danych podane poniżej. <b style="color:var(--brass);font-weight:400">*</b>
+                <span class="blad">Bez tej zgody nie możemy oddzwonić.</span>
+              </span>
+            </label>
+
+            <div class="hp" aria-hidden="true">
+              <label>Nie wypełniaj tego pola<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+            </div>
+
+            <button class="btn btn-zloty wyslij" type="submit" id="przycisk">Wyślij zgłoszenie</button>
+
+            <div class="awaria" id="awaria">
+              Nie udało się wysłać zgłoszenia. Zadzwoń pod <a href="tel:+48790866877">790 866 877</a> napisz na <a href="mailto:kontakt@krakowskiecentrummedyczne.pl">kontakt@krakowskiecentrummedyczne.pl</a> albo przez <a href="https://m.me/krakowskieCM" rel="noopener">Messengera</a>.
+            </div>
+          </div>
+
+          <p class="klauzula">
+            Administratorem danych jest Krakowskie Centrum Medyczne, Rynek 26, 37-700 Przemyśl.
+            Dane podane w formularzu przetwarzamy wyłącznie w celu kontaktu zwrotnego i umówienia wizyty.
+            Podanie imienia i numeru telefonu jest dobrowolne, ale niezbędne, żebyśmy mogli oddzwonić.
+            Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia oraz wycofania zgody w dowolnym momencie.
+            Danych nie przekazujemy podmiotom trzecim w celach marketingowych.
+          </p>
+        </form>
+
+        <div class="sukces" id="sukces">
+          <div class="znaczek" aria-hidden="true"></div>
+          <h2>Zgłoszenie przyjęte</h2>
+          <p class="lead">Oddzwonimy w godzinach pracy rejestracji, od poniedziałku do soboty między 9:00 a 18:00.</p>
+          <div class="przyciski" style="justify-content:center">
+            <a class="btn btn-obrys" href="index.html">Wróć na stronę główną</a>
+            <a class="btn btn-obrys" href="lekarze.html">Poznaj lekarzy</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<div class="pasek-akcji" aria-label="Szybki kontakt">
+  <a class="pa-tel" href="tel:+48790866877"><span class="pa-ico" aria-hidden="true"></span>Zadzwoń</a>
+  <a class="pa-form" href="mailto:kontakt@krakowskiecentrummedyczne.pl">Napisz e-mail</a>
+</div>
+
+<footer class="stopka">
+  <div class="wrap stopka-in">
+    <div class="st-brand">
+      <svg class="mark-st" viewBox="0 0 134 159" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Krakowskie Centrum Medyczne"><path fill="currentColor" d="M 0.00,26.00 L 0.00,27.88 L 1.75,28.00 L 5.00,32.38 L 8.00,42.38 L 8.00,156.50 L 9.38,157.88 L 46.50,157.88 L 47.88,156.50 L 48.62,116.88 L 88.00,158.88 L 133.88,158.88 L 133.88,156.00 L 108.00,129.75 L 65.50,82.00 L 60.12,86.12 L 48.50,100.00 L 46.88,99.62 L 47.88,4.25 L 46.75,2.75 L 47.88,0.00 L 13.50,20.00 Z M 111.38,12.88 L 91.12,13.12 L 90.88,30.75 L 75.38,31.00 L 75.00,31.38 L 75.12,47.75 L 90.50,47.88 L 91.00,48.38 L 91.00,65.50 L 91.38,65.88 L 110.50,65.88 L 111.88,64.62 L 110.88,63.50 L 110.88,49.38 L 112.38,47.88 L 126.50,47.88 L 126.88,47.50 L 126.75,31.12 L 112.38,31.00 L 110.88,29.50 L 110.88,14.38 L 111.88,13.62 Z"/></svg>
+      <p class="st-nazwa">Krakowskie<br>Centrum Medyczne</p>
+      <p class="st-adres">Rynek 26<br>37-700 Przemyśl</p>
+    <div class="ikony">
+        <a href="https://www.facebook.com/krakowskieCM" rel="noopener" aria-label="Facebook Krakowskiego Centrum Medycznego" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.9h-2.34V22c4.78-.79 8.44-4.93 8.44-9.94z"/></svg></a>
+        <a href="https://m.me/krakowskieCM" rel="noopener" aria-label="Napisz przez Messenger" title="Messenger"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.9 1.19 5.42 3.14 7.16.16.15.26.35.27.57l.05 1.78c.02.57.6.94 1.12.71l1.98-.87c.17-.08.36-.09.54-.04 1 .28 2.06.43 3.15.43 5.64 0 10-4.13 10-9.7C22 6.13 17.64 2 12 2zm6 7.46-2.94 4.66c-.47.74-1.47.93-2.18.4l-2.34-1.75a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.32-.97-.18-.69-.63l2.94-4.66c.47-.74 1.47-.93 2.18-.4l2.34 1.75c.22.16.51.16.72 0l3.16-2.4c.42-.32.97.18.69.63z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Rejestracja</h4>
+      <p>Poniedziałek – sobota<br>9:00 – 18:00</p>
+      <p><a class="st-tel" href="tel:+48790866877">790 866 877</a></p>
+      <p><a class="st-mail" href="mailto:kontakt@krakowskiecentrummedyczne.pl">kontakt@<wbr>krakowskiecentrummedyczne.pl</a></p>
+    </div>
+  </div>
+  <div class="wrap drobne">
+    <span>© <span id="rok">2026</span> Krakowskie Centrum Medyczne</span>
+    <span>Treści mają charakter informacyjny i nie zastępują konsultacji lekarskiej.</span>
+    <a class="autor" href="https://projektiks.pl" rel="noopener" title="Projekt X — strony internetowe"><svg class="autor-znak" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#E8836A" d="M8 0h16l8 8v16a8 8 0 0 1-8 8H8a8 8 0 0 1-8-8V8a8 8 0 0 1 8-8z"/><path fill="none" stroke="#12312D" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" d="M11.4 10.6 15.4 16l-4 5.4M20.6 10.6 16.6 16l4 5.4"/></svg><span>Projekt i wykonanie<b>Projekt X</b></span></a>
+  </div>
+</footer>
+
+<script>
+document.getElementById('rok').textContent = new Date().getFullYear();
+var nav = document.getElementById('nav');
+function skrol(){ nav.classList.toggle('stuck', window.scrollY > 30); }
+skrol(); addEventListener('scroll', skrol, {passive:true});
+
+var pasek = document.querySelector('.pasek-akcji');
+if (pasek) {
+  var prog = 420;
+  function pokazPasek(){ pasek.classList.toggle('widoczny', window.scrollY > prog); }
+  pokazPasek(); addEventListener('scroll', pokazPasek, {passive:true});
+}
+
+var b = document.getElementById('burger'), m = document.getElementById('menu');
+b.addEventListener('click', function(){
+  var o = m.classList.toggle('open');
+  b.classList.toggle('x', o); b.setAttribute('aria-expanded', o);
+  document.body.style.overflow = o ? 'hidden' : '';
+});
+m.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){
+  m.classList.remove('open'); b.classList.remove('x'); document.body.style.overflow='';
+}); });
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.1, rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.rv').forEach(function(el,i){ el.style.transitionDelay=(i%3)*90+'ms'; io.observe(el); });
+
+/* ---------- walidacja i wysyłka ---------- */
+(function(){
+  var forma = document.getElementById('forma');
+  var przycisk = document.getElementById('przycisk');
+  var awaria = document.getElementById('awaria');
+
+  function cyfry(s){ return (s.match(/\d/g) || []).length; }
+
+  var reguly = [
+    { pole:'p-imie',  el:'imie',    ok:function(v){ return v.trim().length >= 2; } },
+    { pole:'p-tel',   el:'telefon', ok:function(v){ return cyfry(v) >= 9 && /^[0-9+()\s-]+$/.test(v.trim()); } },
+    { pole:'p-mail',  el:'email',   ok:function(v){ return v.trim() === '' || /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()); } },
+    { pole:'p-zgoda', el:'zgoda',   ok:function(v, el){ return el.checked; } }
+  ];
+
+  function sprawdz(r, pokaz){
+    var el = document.getElementById(r.el);
+    var box = document.getElementById(r.pole);
+    var dobrze = r.ok(el.value, el);
+    if (pokaz) box.classList.toggle('zle', !dobrze);
+    return dobrze;
+  }
+
+  reguly.forEach(function(r){
+    var el = document.getElementById(r.el);
+    var zdarzenie = el.type === 'checkbox' ? 'change' : 'blur';
+    el.addEventListener(zdarzenie, function(){ sprawdz(r, true); });
+    el.addEventListener('input', function(){
+      if (document.getElementById(r.pole).classList.contains('zle')) sprawdz(r, true);
+    });
+  });
+
+  forma.addEventListener('submit', function(e){
+    e.preventDefault();
+    awaria.classList.remove('on');
+
+    var pierwszyBlad = null;
+    reguly.forEach(function(r){
+      if (!sprawdz(r, true) && !pierwszyBlad) pierwszyBlad = document.getElementById(r.pole);
+    });
+    if (pierwszyBlad){
+      pierwszyBlad.scrollIntoView({block:'center', behavior:'smooth'});
+      var wejscie = pierwszyBlad.querySelector('input, select, textarea');
+      if (wejscie) wejscie.focus({preventScroll:true});
+      return;
+    }
+
+    przycisk.disabled = true;
+    przycisk.textContent = 'Wysyłanie...';
+
+    fetch(forma.action, {
+      method: 'POST',
+      body: new FormData(forma)
+    }).then(function(odp){
+      if (!odp.ok && !odp.redirected) throw new Error('blad');
+      forma.classList.add('off');
+      document.getElementById('sukces').classList.add('on');
+      document.getElementById('sukces').scrollIntoView({block:'center', behavior:'smooth'});
+    }).catch(function(){
+      awaria.classList.add('on');
+      przycisk.disabled = false;
+      przycisk.textContent = 'Wyślij zgłoszenie';
+    });
+  });
+})();
+</script>
+</body>
+</html>

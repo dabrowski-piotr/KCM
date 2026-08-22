@@ -1,77 +1,123 @@
-# Krakowskie Centrum Medyczne, strona przejściowa
+# Krakowskie Centrum Medyczne, serwis internetowy
 
-Statyczna strona „w budowie" dla Krakowskiego Centrum Medycznego (Rynek 26, Przemyśl).
-Bez zależności i bez procesu budowania. Czysty HTML i CSS.
+Statyczny serwis dla Krakowskiego Centrum Medycznego, Rynek 26 w Przemyślu.
+Czysty HTML i CSS, bez zależności i bez procesu budowania.
+Publikacja: GitHub Pages, domena `www.krakowskiecentrummedyczne.pl`.
 
 ## Struktura
 
 ```
-.
-├── index.html          # strona główna
-├── 404.html            # strona błędu, ten sam layout
-├── robots.txt
-├── sitemap.xml
-├── .nojekyll           # wyłącza przetwarzanie Jekyllem na GitHub Pages
-└── assets/
-    ├── logo-mark.svg       # znak „k+" w wersji wektorowej
-    ├── logo-mark.png       # znak „k+" na przezroczystości (zapas)
-    ├── recepcja.jpg        # tło hero
-    ├── og.jpg              # miniatura do udostępniania (1200×630)
-    ├── favicon-32.png
-    ├── favicon-512.png
-    └── apple-touch-icon.png
+index.html      strona główna
+oferta.html     zakres opieki, sześć sekcji z kotwicami
+lekarze.html    sylwetki sześciorga lekarzy
+kontakt.html    adres, godziny, mapa, przygotowanie do wizyty
+formularz.html  formularz kontaktowy
+404.html        strona błędu
+styl.css        wspólny arkusz stylów dla wszystkich stron
+
+CNAME           domena, NIE KASOWAĆ
+.nojekyll       wyłącza przetwarzanie Jekyllem
+robots.txt      sitemap.xml
+
+recepcja.jpg    zdjęcie wnętrza, tło nagłówków
+og.jpg          miniatura przy udostępnianiu linku
+favicon.ico     favicon.svg     apple-touch-icon.png
+lek-*.jpg       sześć zdjęć lekarzy
 ```
 
-## Publikacja na GitHub Pages
+Wszystkie pliki leżą w katalogu głównym. Nie ma podkatalogów, żeby nic nie
+zginęło przy wgrywaniu przez przeglądarkę.
 
-```bash
-git init
-git add .
-git commit -m "Strona przejściowa KCM"
-git branch -M main
-git remote add origin https://github.com/dabrowski-piotr/kcm.git
-git push -u origin main
-```
+## Wgrywanie na zwykły hosting
 
-Potem: **Settings → Pages → Source: Deploy from a branch → `main` / `root` → Save**.
-Po chwili strona jest pod `https://dabrowski-piotr.github.io/kcm/`.
+Wgraj całą zawartość katalogu do folderu publicznego serwera, zwykle
+`public_html`, `htdocs` albo `www`. Struktura jest płaska, więc nie trzeba
+niczego przestawiać. Serwer nie wymaga PHP, bazy danych ani żadnych modułów.
 
-## Własna domena
+Pliki `CNAME` i `.nojekyll` są potrzebne wyłącznie przy publikacji na GitHub
+Pages. Na zwykłym hostingu nie przeszkadzają, można je też usunąć.
 
-1. W katalogu głównym utwórz plik `CNAME` z jedną linią, np. `krakowskiecm.pl`.
-2. U rejestratora domeny ustaw rekordy A na adresy GitHub Pages
-   (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`),
-   a dla `www` rekord CNAME na `dabrowski-piotr.github.io`.
-3. W Settings → Pages wpisz domenę i zaznacz **Enforce HTTPS**.
+Formularz kontaktowy wysyła dane przez zewnętrzną usługę i działa tak samo
+na każdym serwerze. W pliku `formularz.html` trzeba podmienić
+`TWOJ_IDENTYFIKATOR` na identyfikator z formspree.io.
 
-## Znak graficzny
+## Wgrywanie zmian na GitHub Pages
 
-Znak „k+" jest wklejony bezpośrednio w kod stron jako wektor (`<svg class="mark">`),
-więc nie wymaga osobnego pobrania i jest ostry na każdym ekranie. Kolor bierze
-z CSS (`currentColor`), można go zmienić jedną właściwością. Pliki
-`assets/logo-mark.svg` i `.png` zostają jako materiał zapasowy oraz źródło
-dla favikon.
+Repozytorium KCM na GitHubie, przycisk **Add file → Upload files**, przeciągnij
+pliki na pole uploadu, potem **Commit changes**. Zmiana pojawia się na stronie
+w ciągu minuty. Do podglądu użyj Ctrl+F5, bo przeglądarka trzyma stare pliki
+w pamięci.
 
-## Adresy w plikach
+Pliku `CNAME` nie usuwaj. Bez niego domena natychmiast przestaje działać.
 
-Adresy w plikach wskazują już na docelową domenę
-`https://www.krakowskiecentrummedyczne.pl` (canonical, og:image, og:url,
-`robots.txt`, `sitemap.xml`). Nie wymagają zmian.
+## Gdzie co zmienić
 
-Zdjęcie recepcji jest wklejone bezpośrednio w `index.html` i `404.html`, więc
-strona wygląda poprawnie nawet bez katalogu `assets`. Katalog jest natomiast
-potrzebny do favikon i do miniatury `og.jpg` przy udostępnianiu linku.
+| Co | Gdzie |
+|---|---|
+| Numer telefonu | wszystkie pliki HTML, ciąg `790 866 877` oraz `tel:+48790866877` |
+| Adres e-mail | wszystkie pliki HTML, ciąg `kontakt@krakowskiecentrummedyczne.pl` |
+| Odbiorca formularza | `formularz.html`, atrybut `action` w znaczniku `<form>` |
+| Godziny rejestracji | `index.html`, `kontakt.html`, stopka we wszystkich plikach, dane strukturalne w `index.html` i `kontakt.html` |
+| Kolory, odstępy, kroje pisma | `styl.css`, sekcja `:root` na górze pliku |
+| Lista usług | `oferta.html`, listy `<ul class="uslugi">` |
+| Opis lekarza | `lekarze.html`, akapit `<p class="bio">` w karcie lekarza |
+| Nowy lekarz | skopiuj całą kartę `<article class="doc rv">` i podmień treść oraz nazwę pliku zdjęcia |
 
-## Dane do potwierdzenia z klientem
+## Zdjęcia lekarzy
 
-- Godziny przyjęć poszczególnych lekarzy (na stronie podane są tylko godziny
-  rejestracji: 9:00–18:00 codziennie).
-- Czy podajemy datę uruchomienia pełnego serwisu. Obecnie jest neutralne
-  „wkrótce", bez konkretnego terminu.
-- Adres e-mail do kontaktu, jeśli ma się pojawić obok telefonu.
+Nazwy plików w katalogu głównym: `lek-jakubiec-wisniewska.jpg`,
+`lek-wisniewski.jpg`, `lek-zembala-szczerba.jpg`, `lek-kornelak.jpg`,
+`lek-stabrawa-lesniak.jpg`, `lek-merta.jpg`.
 
-## Materiały
+Kwadratowe, 800 na 800 pikseli, twarz w górnej jednej trzeciej kadru.
+Brak pliku nie psuje strony: w jego miejscu pojawia się medalion z inicjałami.
 
-Zdjęcie recepcji i znak graficzny pochodzą z materiałów klienta.
-Treści merytoryczne (zakres usług) pochodzą z profilu na Facebooku oraz
-z artykułu o otwarciu placówki w „Życiu Podkarpackim" (14.01.2022).
+## Mapa
+
+Na stronie kontaktu jest mapa OpenStreetMap osadzona przez `iframe`, bez klucza
+API i bez plików cookie. Pod mapą jest odnośnik do Map Google dla osób,
+które chcą wyznaczyć trasę.
+
+## Dane strukturalne
+
+`index.html` i `kontakt.html` zawierają blok `MedicalClinic` w formacie
+schema.org: adres, współrzędne, telefon, godziny otwarcia i specjalizacje.
+To z niego Google buduje wizytówkę w wynikach wyszukiwania. Przy zmianie
+godzin lub telefonu trzeba poprawić także ten blok.
+
+## Podpis twórcy
+
+W dolnym pasku stopki, na każdej stronie, znajduje się znak i odnośnik
+`Projekt i wykonanie — Projekt X` prowadzący do `https://projektiks.pl`.
+Znak jest wektorem wklejonym w kod (`.autor-znak`), nie wymaga pliku.
+
+## Optymalizacja
+
+Zdjęcia lekarzy występują w dwóch rozmiarach: `lek-*.jpg` (800 px) i
+`lek-*-320.jpg` (320 px). Przeglądarka wybiera właściwy przez `srcset`.
+Tło nagłówka ma wersję mobilną `recepcja-640.jpg`, podstawianą przez CSS
+poniżej 900 px szerokości. Przy dodawaniu nowego lekarza trzeba wygenerować
+oba rozmiary zdjęcia.
+
+Na ekranach do 860 px pojawia się przyklejony pasek z przyciskami „Zadzwoń"
+i „Zostaw numer", odsłaniany po przewinięciu 420 px. Na stronie zakresu opieki
+listy usług poniżej 760 px startują zwinięte i rozwijają się po dotknięciu;
+powyżej tej szerokości są zawsze otwarte.
+
+## Zgodność z przeglądarkami
+
+Arkusz stylów zawiera podpórki dla starszych wydań Safari i Firefoksa:
+zapasowe proporcje obrazów dla przeglądarek bez `aspect-ratio`, prefiksy
+`-webkit-` przy rozmyciu tła i kontrolkach formularzy, zapasową jednostkę
+wysokości ekranu, zawijanie długiego adresu e-mail, obsługę trybu wysokiego
+kontrastu oraz arkusz do druku. Pola formularza mają czcionkę 16,5 piksela,
+przez co Safari na iPhonie nie przybliża widoku po dotknięciu pola.
+
+## Sprawdzone przed publikacją
+
+Sześć stron na siedmiu szerokościach ekranu od 320 pikseli: brak poziomego
+przewijania, żaden element nie wystaje poza ekran, wszystkie obrazy się
+ładują, pola dotyku powyżej 38 pikseli, wszystkie odnośniki wewnętrzne
+i kotwice prowadzą do istniejących miejsc, walidacja i wysyłka formularza
+przetestowane, strona działa także przy niedostępnych krojach pisma
+z Google Fonts.

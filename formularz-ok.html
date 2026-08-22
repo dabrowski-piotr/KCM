@@ -3,17 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nie znaleziono strony | Krakowskie Centrum Medyczne</title>
-<meta name="description" content="Strona nie istnieje.">
+<title>Zgłoszenie przyjęte | Krakowskie Centrum Medyczne</title>
+<meta name="robots" content="noindex">
 <meta name="theme-color" content="#12100E">
-<link rel="canonical" href="https://www.krakowskiecentrummedyczne.pl/404.html">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="pl_PL">
-<meta property="og:title" content="Nie znaleziono strony | Krakowskie Centrum Medyczne">
-<meta property="og:description" content="Strona nie istnieje.">
-<meta property="og:url" content="https://www.krakowskiecentrummedyczne.pl/404.html">
-<meta property="og:image" content="https://www.krakowskiecentrummedyczne.pl/og.jpg">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -22,45 +14,41 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Jost:wght@300;400;500&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styl.css">
-<meta name="robots" content="noindex">
+<style>
+.centrum{text-align:center;padding:clamp(120px,18vh,200px) 0 clamp(60px,10vh,120px)}
+.znaczek{width:80px;height:80px;margin:0 auto 28px;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 34% 28%,var(--brass-hi),var(--brass) 58%,var(--brass-deep))}
+.znaczek::after{content:"";width:16px;height:28px;border:solid #1B1408;border-width:0 2.5px 2.5px 0;
+  transform:rotate(42deg) translate(-2px,-3px)}
+.centrum h1{font-size:clamp(30px,4vw,52px);margin-bottom:18px}
+.centrum .lead{margin:0 auto 6px}
+.przyciski{justify-content:center;margin-top:36px}
+</style>
 </head>
 <body>
 <a class="skip" href="#tresc">Przejdź do treści</a>
-<nav class="nav" id="nav">
+<nav class="nav stuck" id="nav">
   <div class="nav-in">
     <a class="brand" href="index.html"><svg class="mark" viewBox="0 0 134 159" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Krakowskie Centrum Medyczne"><path fill="currentColor" d="M 0.00,26.00 L 0.00,27.88 L 1.75,28.00 L 5.00,32.38 L 8.00,42.38 L 8.00,156.50 L 9.38,157.88 L 46.50,157.88 L 47.88,156.50 L 48.62,116.88 L 88.00,158.88 L 133.88,158.88 L 133.88,156.00 L 108.00,129.75 L 65.50,82.00 L 60.12,86.12 L 48.50,100.00 L 46.88,99.62 L 47.88,4.25 L 46.75,2.75 L 47.88,0.00 L 13.50,20.00 Z M 111.38,12.88 L 91.12,13.12 L 90.88,30.75 L 75.38,31.00 L 75.00,31.38 L 75.12,47.75 L 90.50,47.88 L 91.00,48.38 L 91.00,65.50 L 91.38,65.88 L 110.50,65.88 L 111.88,64.62 L 110.88,63.50 L 110.88,49.38 L 112.38,47.88 L 126.50,47.88 L 126.88,47.50 L 126.75,31.12 L 112.38,31.00 L 110.88,29.50 L 110.88,14.38 L 111.88,13.62 Z"/></svg><span>Krakowskie<br>Centrum Medyczne</span></a>
-    <div class="links">
-    <a class="link" href="oferta.html">Zakres opieki</a>
-    <a class="link" href="lekarze.html">Lekarze</a>
-    <a class="link" href="kontakt.html">Kontakt</a>
-    </div>
     <a class="tel" href="tel:+48790866877"><span class="tel-ico" aria-hidden="true"></span>790 866 877</a>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
   </div>
 </nav>
-<div class="menu" id="menu"><a href="index.html">Strona główna</a><a href="oferta.html">Zakres opieki</a><a href="lekarze.html">Lekarze</a><a href="kontakt.html">Kontakt</a>
-  <a class="menu-tel" href="tel:+48790866877">Zadzwoń: 790 866 877</a>
-</div>
 
-<header class="hero duzy" id="tresc">
-  <div class="hero-foto" aria-hidden="true"></div>
-  <div class="blask" aria-hidden="true"></div>
-  <div class="hero-in">
-    <div class="hero-tresc">
-      <p class="kicker">Błąd 404</p>
-      <h1>Tej strony<br><em>tu</em> nie ma.</h1>
-      <p class="lead">Adres jest nieaktualny albo zawiera literówkę. Wróć na stronę główną albo zadzwoń, a pomożemy umówić wizytę.</p>
-      <div class="przyciski">
-        <a class="btn btn-zloty" href="index.html">Strona główna</a>
-        <a class="btn btn-obrys" href="tel:+48790866877">Zadzwoń: 790 866 877</a>
-      </div>
-    </div>
+<main class="centrum wrap" id="tresc">
+  <div class="znaczek" aria-hidden="true"></div>
+  <h1>Zgłoszenie przyjęte</h1>
+  <p class="lead">Oddzwonimy w godzinach pracy rejestracji, od poniedziałku do soboty między 9:00 a 18:00.</p>
+  <p class="lead">Zgłoszenia z wieczora i weekendu obsługujemy w najbliższy dzień roboczy.</p>
+  <div class="przyciski">
+    <a class="btn btn-zloty" href="index.html">Strona główna</a>
+    <a class="btn btn-obrys" href="lekarze.html">Poznaj lekarzy</a>
   </div>
-</header>
+</main>
+
 
 <div class="pasek-akcji" aria-label="Szybki kontakt">
   <a class="pa-tel" href="tel:+48790866877"><span class="pa-ico" aria-hidden="true"></span>Zadzwoń</a>
-  <a class="pa-form" href="formularz.html">Zostaw numer</a>
+  <a class="pa-form" href="mailto:kontakt@krakowskiecentrummedyczne.pl">Napisz e-mail</a>
 </div>
 
 <footer class="stopka">
@@ -87,7 +75,6 @@
     <a class="autor" href="https://projektiks.pl" rel="noopener" title="Projekt X — strony internetowe"><svg class="autor-znak" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#E8836A" d="M8 0h16l8 8v16a8 8 0 0 1-8 8H8a8 8 0 0 1-8-8V8a8 8 0 0 1 8-8z"/><path fill="none" stroke="#12312D" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" d="M11.4 10.6 15.4 16l-4 5.4M20.6 10.6 16.6 16l4 5.4"/></svg><span>Projekt i wykonanie<b>Projekt X</b></span></a>
   </div>
 </footer>
-
 <script>
 document.getElementById('rok').textContent = new Date().getFullYear();
 var nav = document.getElementById('nav');
@@ -101,19 +88,6 @@ if (pasek) {
   pokazPasek(); addEventListener('scroll', pokazPasek, {passive:true});
 }
 
-var b = document.getElementById('burger'), m = document.getElementById('menu');
-b.addEventListener('click', function(){
-  var o = m.classList.toggle('open');
-  b.classList.toggle('x', o); b.setAttribute('aria-expanded', o);
-  document.body.style.overflow = o ? 'hidden' : '';
-});
-m.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){
-  m.classList.remove('open'); b.classList.remove('x'); document.body.style.overflow='';
-}); });
-var io = new IntersectionObserver(function(es){
-  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-}, {threshold:.1, rootMargin:'0px 0px -6% 0px'});
-document.querySelectorAll('.rv').forEach(function(el,i){ el.style.transitionDelay=(i%3)*90+'ms'; io.observe(el); });
 </script>
 </body>
 </html>
